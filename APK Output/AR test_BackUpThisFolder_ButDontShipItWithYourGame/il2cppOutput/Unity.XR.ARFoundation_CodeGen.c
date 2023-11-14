@@ -4430,15 +4430,15 @@ static const Il2CppTokenIndexMethodTuple s_reversePInvokeIndices[1] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[9] = 
 {
-	{ 0x02000040, { 12, 6 } },
-	{ 0x02000041, { 18, 75 } },
-	{ 0x0200005C, { 93, 17 } },
-	{ 0x0200005D, { 110, 8 } },
-	{ 0x0200005E, { 118, 6 } },
+	{ 0x02000040, { 13, 6 } },
+	{ 0x02000041, { 19, 75 } },
+	{ 0x0200005C, { 94, 17 } },
+	{ 0x0200005D, { 111, 8 } },
+	{ 0x0200005E, { 119, 6 } },
 	{ 0x060000CD, { 0, 3 } },
 	{ 0x06000178, { 3, 2 } },
 	{ 0x0600021C, { 5, 2 } },
-	{ 0x06000252, { 7, 5 } },
+	{ 0x06000252, { 7, 6 } },
 };
 extern const uint32_t g_rgctx_NativeArray_1_get_IsCreated_m14BE32F38CF087D69E7C7ACD8FB9B45BD0461535;
 extern const uint32_t g_rgctx_NativeArrayUnsafeUtility_GetUnsafePtr_TisT_tDF59E455ED8D1534B3CCD05523986223FBA7A218_m2DAC945288DFE259B1D6743EF8589C4FF1C4A307;
@@ -4448,9 +4448,10 @@ extern const uint32_t g_rgctx_T_t3C10516E7FE517FE335EE1B94DCD03C9E52EED3E;
 extern const uint32_t g_rgctx_Component_GetComponent_TisT_tC3F99F359F71E5A27263B761F008CA1EDD8A0965_mAF59624E7DF0F9A092A0FBE9D9CF8FC94B40D695;
 extern const uint32_t g_rgctx_T_tC3F99F359F71E5A27263B761F008CA1EDD8A0965;
 extern const uint32_t g_rgctx_NativeArray_1__ctor_m35268819EDA3E02807775BFD25CE5B8BF95234D5;
-extern const uint32_t g_rgctx_NativeArray_1_Copy_m269178E756EB90CD3A24E8B7BC8A7E500B75563D;
+extern const uint32_t g_rgctx_NativeArray_1_Copy_m06ADB5D5334A26B6D39B579B2599265E85FDF1BB;
 extern const uint32_t g_rgctx_NativeArray_1_t23BFAA73C4C41B9904E0E737F5F61F241CF50B35;
 extern const uint32_t g_rgctx_NativeArray_1_Copy_m26EC4359EA6C74A350CA7EAFE914965591F3F944;
+extern const uint32_t g_rgctx_NativeArray_1_get_IsCreated_mBF164EAECBE1CB8B74C764EDE6B940AAD282B2F2;
 extern const uint32_t g_rgctx_NativeArray_1_Dispose_m1D35FBCAF9B5B5C0AC1FF5ED99362CBEB3A25617;
 extern const uint32_t g_rgctx_ARTrackable_2_get_sessionRelativeData_m0A9610B594F1EA6DC4240E261248A2864C1A6151;
 extern const uint32_t g_rgctx_TSessionRelativeData_t5C940E460FA6CD53E02E1E59A516CBAC5216B7B7;
@@ -4564,7 +4565,7 @@ extern const uint32_t g_rgctx_Enumerator_MoveNext_mEC2AEEDA4CF40AA8379C53855A44F
 extern const uint32_t g_rgctx_Enumerator_get_Current_m5190A263373FB0008A3AA284FDB9062611EF9C9D;
 extern const uint32_t g_rgctx_KeyValuePair_2_get_Value_m286FE25E1C6A797990C9758C7B41D035D225A90D;
 extern const uint32_t g_rgctx_Enumerator_Dispose_m3B07DA698622B8157A7748200ED296A22D374108;
-static const Il2CppRGCTXDefinition s_rgctxValues[124] = 
+static const Il2CppRGCTXDefinition s_rgctxValues[125] = 
 {
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArray_1_get_IsCreated_m14BE32F38CF087D69E7C7ACD8FB9B45BD0461535 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArrayUnsafeUtility_GetUnsafePtr_TisT_tDF59E455ED8D1534B3CCD05523986223FBA7A218_m2DAC945288DFE259B1D6743EF8589C4FF1C4A307 },
@@ -4574,9 +4575,10 @@ static const Il2CppRGCTXDefinition s_rgctxValues[124] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Component_GetComponent_TisT_tC3F99F359F71E5A27263B761F008CA1EDD8A0965_mAF59624E7DF0F9A092A0FBE9D9CF8FC94B40D695 },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_tC3F99F359F71E5A27263B761F008CA1EDD8A0965 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArray_1__ctor_m35268819EDA3E02807775BFD25CE5B8BF95234D5 },
-	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArray_1_Copy_m269178E756EB90CD3A24E8B7BC8A7E500B75563D },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArray_1_Copy_m06ADB5D5334A26B6D39B579B2599265E85FDF1BB },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_NativeArray_1_t23BFAA73C4C41B9904E0E737F5F61F241CF50B35 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArray_1_Copy_m26EC4359EA6C74A350CA7EAFE914965591F3F944 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArray_1_get_IsCreated_mBF164EAECBE1CB8B74C764EDE6B940AAD282B2F2 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_NativeArray_1_Dispose_m1D35FBCAF9B5B5C0AC1FF5ED99362CBEB3A25617 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_ARTrackable_2_get_sessionRelativeData_m0A9610B594F1EA6DC4240E261248A2864C1A6151 },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_TSessionRelativeData_t5C940E460FA6CD53E02E1E59A516CBAC5216B7B7 },
@@ -4704,7 +4706,7 @@ const Il2CppCodeGenModule g_Unity_XR_ARFoundation_CodeGenModule =
 	s_reversePInvokeIndices,
 	9,
 	s_rgctxIndices,
-	124,
+	125,
 	s_rgctxValues,
 	NULL,
 	NULL, // module initializer,

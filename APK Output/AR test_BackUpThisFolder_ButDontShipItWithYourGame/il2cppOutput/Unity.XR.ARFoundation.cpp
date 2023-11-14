@@ -8672,10 +8672,10 @@ inline void SubsystemLifecycleManager_3_OnDisable_mC0A6C6AE0F7348D84877C210984A1
 {
 	((  void (*) (SubsystemLifecycleManager_3_t1892B8E9DF20D5A95CB7E5B2AAA38CF6DD9711CF*, const RuntimeMethod*))SubsystemLifecycleManager_3_OnDisable_mF8EA9C3C4A1807951A4F3A1BCE4052D77E21B563_gshared)(__this, method);
 }
-// System.Void UnityEngine.XR.ARFoundation.AROcclusionManager::UpdateTexturesInfos()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AROcclusionManager_UpdateTexturesInfos_m86684113F8D996C1B75A3FF1B81DB0BAD08A6E1F (AROcclusionManager_t9EDE9F76050AF892E2AC6704D0F76EDAC370609D* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.XR.ARFoundation.AROcclusionManager::InvokeFrameReceived()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AROcclusionManager_InvokeFrameReceived_m95D3C9962774B0221B8448A55D14404BDE87A7C3 (AROcclusionManager_t9EDE9F76050AF892E2AC6704D0F76EDAC370609D* __this, const RuntimeMethod* method) ;
+// System.Void UnityEngine.XR.ARFoundation.AROcclusionManager::UpdateTexturesInfos()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AROcclusionManager_UpdateTexturesInfos_m86684113F8D996C1B75A3FF1B81DB0BAD08A6E1F (AROcclusionManager_t9EDE9F76050AF892E2AC6704D0F76EDAC370609D* __this, const RuntimeMethod* method) ;
 // Unity.Collections.NativeArray`1<UnityEngine.XR.ARSubsystems.XRTextureDescriptor> UnityEngine.XR.ARSubsystems.XROcclusionSubsystem::GetTextureDescriptors(Unity.Collections.Allocator)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NativeArray_1_t6C2613A1D4A03EFEE59BBADBC529386D1205D01C XROcclusionSubsystem_GetTextureDescriptors_mD667D3C1F1C019B70E7B1B37131DBCF5A3962FF3 (XROcclusionSubsystem_tAA1BB69ACF188D778FBC8EF5E7B427C6EB2F0C3C* __this, int32_t ___allocator0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<UnityEngine.Texture2D>::set_Capacity(System.Int32)
@@ -28627,6 +28627,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AROcclusionManager_OnDisable_mD945E4ADB6
 		SubsystemLifecycleManager_3_OnDisable_mC0A6C6AE0F7348D84877C210984A164CA91663E0(__this, SubsystemLifecycleManager_3_OnDisable_mC0A6C6AE0F7348D84877C210984A164CA91663E0_RuntimeMethod_var);
 		// ResetTextureInfos();
 		AROcclusionManager_ResetTextureInfos_m863803DE85E0715F6CE0474BFF58BAE27A3E4C53(__this, NULL);
+		// InvokeFrameReceived();
+		AROcclusionManager_InvokeFrameReceived_m95D3C9962774B0221B8448A55D14404BDE87A7C3(__this, NULL);
 		// }
 		return;
 	}
@@ -34974,32 +34976,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR NativeArray_1_t1ABEAB84724CAEAFCB8767B8502FD3
 	ARPointCloud_t884F66E095A8DEA1E8207FBF9E15F98D7C75B1F2* V_4 = NULL;
 	NativeSlice_1_t4B5C42A704ED060AB92A8716135FE435B1E6C23A V_5;
 	memset((&V_5), 0, sizeof(V_5));
-	Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 V_6;
-	memset((&V_6), 0, sizeof(V_6));
-	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_7;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_6 = NULL;
+	Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 V_7;
 	memset((&V_7), 0, sizeof(V_7));
-	Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 V_8;
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_8;
 	memset((&V_8), 0, sizeof(V_8));
-	NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 V_9;
+	Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 V_9;
 	memset((&V_9), 0, sizeof(V_9));
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_10;
+	NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 V_10;
 	memset((&V_10), 0, sizeof(V_10));
-	Nullable_1_t8E36DA714556A75295117FA891459FC09EA64AA4 V_11;
+	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_11;
 	memset((&V_11), 0, sizeof(V_11));
-	PointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA V_12;
+	Nullable_1_t8E36DA714556A75295117FA891459FC09EA64AA4 V_12;
 	memset((&V_12), 0, sizeof(V_12));
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_13;
+	PointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA V_13;
 	memset((&V_13), 0, sizeof(V_13));
-	NativeArray_1_t1ABEAB84724CAEAFCB8767B8502FD3185AC9CAD0 V_14;
+	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_14;
 	memset((&V_14), 0, sizeof(V_14));
-	NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 V_15;
+	NativeArray_1_t1ABEAB84724CAEAFCB8767B8502FD3185AC9CAD0 V_15;
 	memset((&V_15), 0, sizeof(V_15));
-	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C V_16;
+	NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 V_16;
 	memset((&V_16), 0, sizeof(V_16));
-	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_17;
+	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C V_17;
 	memset((&V_17), 0, sizeof(V_17));
-	PointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9 V_18;
+	JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 V_18;
 	memset((&V_18), 0, sizeof(V_18));
+	PointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9 V_19;
+	memset((&V_19), 0, sizeof(V_19));
 	{
 		// if ((trackableTypeMask & TrackableType.FeaturePoint) == TrackableType.None)
 		int32_t L_0 = ___trackableTypeMask1;
@@ -35032,7 +35035,7 @@ IL_000f:
 		Enumerator_t2F253FB91024CD5C16AF98F52A88A904C9466C15 L_5;
 		L_5 = TrackableCollection_1_GetEnumerator_mDE148BD1EECC2C56123C480D8F3C9132FBBCBAEA((&V_1), TrackableCollection_1_GetEnumerator_mDE148BD1EECC2C56123C480D8F3C9132FBBCBAEA_RuntimeMethod_var);
 		V_3 = L_5;
-		goto IL_01d1;
+		goto IL_01d0;
 	}
 
 IL_0033:
@@ -35046,12 +35049,12 @@ IL_0033:
 		NullCheck(L_7);
 		Nullable_1_t8E36DA714556A75295117FA891459FC09EA64AA4 L_8;
 		L_8 = ARPointCloud_get_positions_mD1B6C96855B80F0CCF6B32F97CBA75110E6EBEB5(L_7, NULL);
-		V_11 = L_8;
+		V_12 = L_8;
 		bool L_9;
-		L_9 = Nullable_1_get_HasValue_mA52547847103C32B18535C313E7B4F72D08790D2_inline((&V_11), Nullable_1_get_HasValue_mA52547847103C32B18535C313E7B4F72D08790D2_RuntimeMethod_var);
+		L_9 = Nullable_1_get_HasValue_mA52547847103C32B18535C313E7B4F72D08790D2_inline((&V_12), Nullable_1_get_HasValue_mA52547847103C32B18535C313E7B4F72D08790D2_RuntimeMethod_var);
 		if (!L_9)
 		{
-			goto IL_01d1;
+			goto IL_01d0;
 		}
 	}
 	{
@@ -35060,90 +35063,90 @@ IL_0033:
 		NullCheck(L_10);
 		Nullable_1_t8E36DA714556A75295117FA891459FC09EA64AA4 L_11;
 		L_11 = ARPointCloud_get_positions_mD1B6C96855B80F0CCF6B32F97CBA75110E6EBEB5(L_10, NULL);
-		V_11 = L_11;
+		V_12 = L_11;
 		NativeSlice_1_t4B5C42A704ED060AB92A8716135FE435B1E6C23A L_12;
-		L_12 = Nullable_1_get_Value_m0B786A1358FF6C1E2BB187D6D8354A155148928C((&V_11), Nullable_1_get_Value_m0B786A1358FF6C1E2BB187D6D8354A155148928C_RuntimeMethod_var);
+		L_12 = Nullable_1_get_Value_m0B786A1358FF6C1E2BB187D6D8354A155148928C((&V_12), Nullable_1_get_Value_m0B786A1358FF6C1E2BB187D6D8354A155148928C_RuntimeMethod_var);
 		V_5 = L_12;
-		// var sessionSpacePose = new Pose(
-		//     pointCloud.transform.localPosition,
-		//     pointCloud.transform.localRotation);
+		// var xform = pointCloud.transform;
 		ARPointCloud_t884F66E095A8DEA1E8207FBF9E15F98D7C75B1F2* L_13 = V_4;
 		NullCheck(L_13);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14;
 		L_14 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_13, NULL);
-		NullCheck(L_14);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15;
-		L_15 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_14, NULL);
-		ARPointCloud_t884F66E095A8DEA1E8207FBF9E15F98D7C75B1F2* L_16 = V_4;
-		NullCheck(L_16);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
-		L_17 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_16, NULL);
+		V_6 = L_14;
+		// var sessionSpacePose = new Pose(
+		//     xform.localPosition,
+		//     xform.localRotation);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15 = V_6;
+		NullCheck(L_15);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16;
+		L_16 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_15, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17 = V_6;
 		NullCheck(L_17);
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_18;
 		L_18 = Transform_get_localRotation_mD53D37611A5DAE93EC6C7BBCAC337408C5CACA77(L_17, NULL);
-		Pose__ctor_m15CA45808A2BBF1956E836D22C387FAB80BED051((&V_6), L_15, L_18, NULL);
+		Pose__ctor_m15CA45808A2BBF1956E836D22C387FAB80BED051((&V_7), L_16, L_18, NULL);
 		// var invRotation = Quaternion.Inverse(sessionSpacePose.rotation);
-		Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 L_19 = V_6;
+		Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 L_19 = V_7;
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_20 = L_19.___rotation_1;
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_21;
 		L_21 = Quaternion_Inverse_m7597DECDAD37194FAC86D1A11DCE3F0C7747F817(L_20, NULL);
-		V_7 = L_21;
+		V_8 = L_21;
 		// var ray = new Ray(
 		//     invRotation * (rayInSessionSpace.origin - sessionSpacePose.position),
 		//     invRotation * rayInSessionSpace.direction);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_22 = V_7;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_22 = V_8;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23;
 		L_23 = Ray_get_origin_m97604A8F180316A410DCD77B7D74D04522FA1BA6((&___rayInSessionSpace0), NULL);
-		Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 L_24 = V_6;
+		Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 L_24 = V_7;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25 = L_24.___position_0;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26;
 		L_26 = Vector3_op_Subtraction_m1690F44F6DC92B770A940B6CF8AE0535625A9824_inline(L_23, L_25, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_27;
 		L_27 = Quaternion_op_Multiply_mF1348668A6CCD46FBFF98D39182F89358ED74AC0(L_22, L_26, NULL);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_28 = V_7;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_28 = V_8;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_29;
 		L_29 = Ray_get_direction_m21C2D22D3BD4A683BD4DC191AB22DD05F5EC2086((&___rayInSessionSpace0), NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30;
 		L_30 = Quaternion_op_Multiply_mF1348668A6CCD46FBFF98D39182F89358ED74AC0(L_28, L_29, NULL);
-		Ray__ctor_mE298992FD10A3894C38373198385F345C58BD64C((&V_8), L_27, L_30, NULL);
+		Ray__ctor_mE298992FD10A3894C38373198385F345C58BD64C((&V_9), L_27, L_30, NULL);
 		// var infos = new NativeArray<PointCloudRaycastInfo>(points.Length, Allocator.TempJob);
 		int32_t L_31;
 		L_31 = NativeSlice_1_get_Length_m7650D33DC04FE87C0736D620684106DF90ADFFBB_inline((&V_5), NativeSlice_1_get_Length_m7650D33DC04FE87C0736D620684106DF90ADFFBB_RuntimeMethod_var);
-		NativeArray_1__ctor_m4852B4B550E983CC32889D17E9246E605673E1A0((&V_9), L_31, 3, 1, NativeArray_1__ctor_m4852B4B550E983CC32889D17E9246E605673E1A0_RuntimeMethod_var);
+		NativeArray_1__ctor_m4852B4B550E983CC32889D17E9246E605673E1A0((&V_10), L_31, 3, 1, NativeArray_1__ctor_m4852B4B550E983CC32889D17E9246E605673E1A0_RuntimeMethod_var);
 		// var raycastJob = new PointCloudRaycastJob
 		// {
 		//     points = points,
 		//     ray = ray,
 		//     infoOut = infos
 		// };
-		il2cpp_codegen_initobj((&V_12), sizeof(PointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA));
+		il2cpp_codegen_initobj((&V_13), sizeof(PointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA));
 		NativeSlice_1_t4B5C42A704ED060AB92A8716135FE435B1E6C23A L_32 = V_5;
-		(&V_12)->___points_0 = L_32;
-		Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 L_33 = V_8;
-		(&V_12)->___ray_2 = L_33;
-		NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 L_34 = V_9;
-		(&V_12)->___infoOut_1 = L_34;
-		PointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA L_35 = V_12;
+		(&V_13)->___points_0 = L_32;
+		Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 L_33 = V_9;
+		(&V_13)->___ray_2 = L_33;
+		NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 L_34 = V_10;
+		(&V_13)->___infoOut_1 = L_34;
+		PointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA L_35 = V_13;
 		// var raycastHandle = raycastJob.Schedule(infos.Length, 1);
 		int32_t L_36;
-		L_36 = IL2CPP_NATIVEARRAY_GET_LENGTH(((&V_9))->___m_Length_1);
-		il2cpp_codegen_initobj((&V_13), sizeof(JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08));
-		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_37 = V_13;
+		L_36 = IL2CPP_NATIVEARRAY_GET_LENGTH(((&V_10))->___m_Length_1);
+		il2cpp_codegen_initobj((&V_14), sizeof(JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08));
+		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_37 = V_14;
 		JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_38;
 		L_38 = IJobParallelForExtensions_Schedule_TisPointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA_m6C00099A62F663D7DEEDD921D6C2BBFC1DE65908(L_35, L_36, 1, L_37, IJobParallelForExtensions_Schedule_TisPointCloudRaycastJob_t150A3AAEB6CB9F85DEEDE77859C128D1727C7BFA_m6C00099A62F663D7DEEDD921D6C2BBFC1DE65908_RuntimeMethod_var);
-		V_10 = L_38;
+		V_11 = L_38;
 		// using (var hitBuffer = new NativeArray<XRRaycastHit>(infos.Length, Allocator.TempJob))
 		int32_t L_39;
-		L_39 = IL2CPP_NATIVEARRAY_GET_LENGTH(((&V_9))->___m_Length_1);
-		NativeArray_1__ctor_m0D69112528F839FF17F6C9C7A4B4985DCB3B6042((&V_14), L_39, 3, 1, NativeArray_1__ctor_m0D69112528F839FF17F6C9C7A4B4985DCB3B6042_RuntimeMethod_var);
+		L_39 = IL2CPP_NATIVEARRAY_GET_LENGTH(((&V_10))->___m_Length_1);
+		NativeArray_1__ctor_m0D69112528F839FF17F6C9C7A4B4985DCB3B6042((&V_15), L_39, 3, 1, NativeArray_1__ctor_m0D69112528F839FF17F6C9C7A4B4985DCB3B6042_RuntimeMethod_var);
 	}
 	{
 		auto __finallyBlock = il2cpp::utils::Finally([&]
 		{
 
-FINALLY_01c3:
+FINALLY_01c2:
 			{// begin finally (depth: 1)
-				NativeArray_1_Dispose_m80961963BF541F388F0067D545B948EDAEA543AE((&V_14), NativeArray_1_Dispose_m80961963BF541F388F0067D545B948EDAEA543AE_RuntimeMethod_var);
+				NativeArray_1_Dispose_m80961963BF541F388F0067D545B948EDAEA543AE((&V_15), NativeArray_1_Dispose_m80961963BF541F388F0067D545B948EDAEA543AE_RuntimeMethod_var);
 				return;
 			}// end finally (depth: 1)
 		});
@@ -35151,16 +35154,16 @@ FINALLY_01c3:
 		{// begin try (depth: 1)
 			{
 				// using (infos)
-				NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 L_40 = V_9;
-				V_15 = L_40;
+				NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 L_40 = V_10;
+				V_16 = L_40;
 			}
 			{
 				auto __finallyBlock = il2cpp::utils::Finally([&]
 				{
 
-FINALLY_01b5_1:
+FINALLY_01b4_1:
 					{// begin finally (depth: 2)
-						NativeArray_1_Dispose_m1D48CF875B83D03B707DB984DA1028E8CEECFA7B((&V_15), NativeArray_1_Dispose_m1D48CF875B83D03B707DB984DA1028E8CEECFA7B_RuntimeMethod_var);
+						NativeArray_1_Dispose_m1D48CF875B83D03B707DB984DA1028E8CEECFA7B((&V_16), NativeArray_1_Dispose_m1D48CF875B83D03B707DB984DA1028E8CEECFA7B_RuntimeMethod_var);
 						return;
 					}// end finally (depth: 2)
 				});
@@ -35168,15 +35171,15 @@ FINALLY_01b5_1:
 				{// begin try (depth: 2)
 					{
 						// using (var count = new NativeArray<int>(1, Allocator.TempJob))
-						NativeArray_1__ctor_mB7BB23924A114599D399A5EC6C00B2B6407CF66D((&V_16), 1, 3, 1, NativeArray_1__ctor_mB7BB23924A114599D399A5EC6C00B2B6407CF66D_RuntimeMethod_var);
+						NativeArray_1__ctor_mB7BB23924A114599D399A5EC6C00B2B6407CF66D((&V_17), 1, 3, 1, NativeArray_1__ctor_mB7BB23924A114599D399A5EC6C00B2B6407CF66D_RuntimeMethod_var);
 					}
 					{
 						auto __finallyBlock = il2cpp::utils::Finally([&]
 						{
 
-FINALLY_01a7_2:
+FINALLY_01a6_2:
 							{// begin finally (depth: 3)
-								NativeArray_1_Dispose_m05C674E687B921C37722A6A1FF938FD56574642E((&V_16), NativeArray_1_Dispose_m05C674E687B921C37722A6A1FF938FD56574642E_RuntimeMethod_var);
+								NativeArray_1_Dispose_m05C674E687B921C37722A6A1FF938FD56574642E((&V_17), NativeArray_1_Dispose_m05C674E687B921C37722A6A1FF938FD56574642E_RuntimeMethod_var);
 								return;
 							}// end finally (depth: 3)
 						});
@@ -35192,42 +35195,42 @@ FINALLY_01a7_2:
 							//     trackableId = pointCloud.trackableId,
 							//     count = count
 							// };
-							il2cpp_codegen_initobj((&V_18), sizeof(PointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9));
+							il2cpp_codegen_initobj((&V_19), sizeof(PointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9));
 							NativeSlice_1_t4B5C42A704ED060AB92A8716135FE435B1E6C23A L_41 = V_5;
-							(&V_18)->___points_0 = L_41;
-							NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 L_42 = V_9;
-							(&V_18)->___infos_1 = L_42;
-							NativeArray_1_t1ABEAB84724CAEAFCB8767B8502FD3185AC9CAD0 L_43 = V_14;
-							(&V_18)->___hits_2 = L_43;
+							(&V_19)->___points_0 = L_41;
+							NativeArray_1_tA1E97291673A9D64EEF306BAF92C2FFE8DA08E84 L_42 = V_10;
+							(&V_19)->___infos_1 = L_42;
+							NativeArray_1_t1ABEAB84724CAEAFCB8767B8502FD3185AC9CAD0 L_43 = V_15;
+							(&V_19)->___hits_2 = L_43;
 							float L_44 = V_0;
 							float L_45;
 							L_45 = cosf(((float)il2cpp_codegen_multiply(L_44, (0.5f))));
-							(&V_18)->___cosineThreshold_4 = L_45;
-							Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 L_46 = V_6;
-							(&V_18)->___pose_5 = L_46;
+							(&V_19)->___cosineThreshold_4 = L_45;
+							Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 L_46 = V_7;
+							(&V_19)->___pose_5 = L_46;
 							ARPointCloud_t884F66E095A8DEA1E8207FBF9E15F98D7C75B1F2* L_47 = V_4;
 							NullCheck(L_47);
 							TrackableId_t49EAE8AA4B9584E314518723DC22B66496D47AD7 L_48;
 							L_48 = ARTrackable_2_get_trackableId_mA20CE605A904B030F448EE2EB8C2894D2D5EE7FE(L_47, ARTrackable_2_get_trackableId_mA20CE605A904B030F448EE2EB8C2894D2D5EE7FE_RuntimeMethod_var);
-							(&V_18)->___trackableId_6 = L_48;
-							NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C L_49 = V_16;
-							(&V_18)->___count_3 = L_49;
-							PointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9 L_50 = V_18;
+							(&V_19)->___trackableId_6 = L_48;
+							NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C L_49 = V_17;
+							(&V_19)->___count_3 = L_49;
+							PointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9 L_50 = V_19;
 							// var collectResultsHandle = collectResultsJob.Schedule(raycastHandle);
-							JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_51 = V_10;
+							JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_51 = V_11;
 							JobHandle_t5DF5F99902FED3C801A81C05205CEA6CE039EF08 L_52;
 							L_52 = IJobExtensions_Schedule_TisPointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9_mA06CA3F8DA95275F3AE2B5AA3FCBE6EB4E76D4C1(L_50, L_51, IJobExtensions_Schedule_TisPointCloudRaycastCollectResultsJob_t69F3217E9403CAAACB1D1142CF0C0A9761EBBDD9_mA06CA3F8DA95275F3AE2B5AA3FCBE6EB4E76D4C1_RuntimeMethod_var);
-							V_17 = L_52;
+							V_18 = L_52;
 							// collectResultsHandle.Complete();
-							JobHandle_Complete_mDCED35A125AAB37EDDAB2E31C805B4904B614A4A((&V_17), NULL);
+							JobHandle_Complete_mDCED35A125AAB37EDDAB2E31C805B4904B614A4A((&V_18), NULL);
 							// Append(ref allHits, hitBuffer, count[0], allocator);
-							NativeArray_1_t1ABEAB84724CAEAFCB8767B8502FD3185AC9CAD0 L_53 = V_14;
+							NativeArray_1_t1ABEAB84724CAEAFCB8767B8502FD3185AC9CAD0 L_53 = V_15;
 							int32_t L_54;
-							L_54 = IL2CPP_NATIVEARRAY_GET_ITEM(int32_t, ((&V_16))->___m_Buffer_0, 0);
+							L_54 = IL2CPP_NATIVEARRAY_GET_ITEM(int32_t, ((&V_17))->___m_Buffer_0, 0);
 							int32_t L_55 = ___allocator2;
 							ARPointCloudManager_Append_TisXRRaycastHit_t87A29A58C1D41AF1B3995B73777A7494B0695780_m662B45F1E518CEC8D12D6EF2E05F29EFCAB40DE9((&V_2), L_53, L_54, L_55, ARPointCloudManager_Append_TisXRRaycastHit_t87A29A58C1D41AF1B3995B73777A7494B0695780_m662B45F1E518CEC8D12D6EF2E05F29EFCAB40DE9_RuntimeMethod_var);
 							// }
-							goto IL_01d1;
+							goto IL_01d0;
 						}// end try (depth: 3)
 						catch(Il2CppExceptionWrapper& e)
 						{
@@ -35247,7 +35250,7 @@ FINALLY_01a7_2:
 		}
 	}
 
-IL_01d1:
+IL_01d0:
 	{
 		// foreach (var pointCloud in trackableCollection)
 		bool L_56;
